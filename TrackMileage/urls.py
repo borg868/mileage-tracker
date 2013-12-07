@@ -8,7 +8,6 @@ fillup_info = {
     "queryset" : Fillup.objects.all(),
 }
 
-
 admin.autodiscover()
 
 urlpatterns = patterns('',
