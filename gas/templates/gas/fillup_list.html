@@ -2,7 +2,7 @@
     <h2>Fillup Records</h2>
     <ul>
         {% for fillup in object_list %}
-            <li>{{ fillup.user }} {{fillup.purchase_date}} {{fillup.odometer}}</li>
+            <li>{{fillup.user}} {{fillup.purchase_date}} {{fillup.odometer}}</li>
         {% endfor %}
     </ul>
 {% endblock %}
