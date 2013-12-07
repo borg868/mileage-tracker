@@ -29,3 +29,7 @@ def entry(request):
 
     context['form'] = form
     return render(request, 'gas/entry.html', context)
+
+def list(request):
+    
+    return render(request, 'gas/list.html', context)
