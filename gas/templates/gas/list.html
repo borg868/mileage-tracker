@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Publishers</h2>
+    <h2>Fillup Records</h2>
     <ul>
-        {% for publisher in object_list %}
-            <li>{{ publisher.name }}</li>
+        {% for fillup in object_list %}
+            <li>{{ fillup.user fillup.purchase_date fillup.odometer}}</li>
         {% endfor %}
     </ul>
 {% endblock %}
