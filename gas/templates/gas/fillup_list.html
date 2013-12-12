@@ -1,7 +1,7 @@
 {% block content %}
     <h2>Fillup Records</h2>
     <ul>
-        {% for fillup in object_list %}
+        {% for fillup in all %}
             <li>{{fillup.user}} {{fillup.purchase_date}} {{fillup.odometer}}</li>
         {% endfor %}
     </ul>
