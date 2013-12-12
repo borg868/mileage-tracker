@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from gas.forms import EntryForm
 from gas.models import User, Fillup
+from django.views.generic.list import ListView
 
 '''
 Entry form to input data.
@@ -29,3 +30,12 @@ def entry(request):
 
     context['form'] = form
     return render(request, 'gas/entry.html', context)
+
+class FillupListView(ListView):
+    
+    model = Fillup
+    def get_context_data(self, **kwargs):
+        context = super(FillupListView, self).get_context_data(**kwargs)
+        context['all'] = 
+        return context
+    
