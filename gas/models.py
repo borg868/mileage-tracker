@@ -4,7 +4,7 @@ class User(models.Model):
     last_name = models.CharField(max_length=30)
     first_name = models.CharField(max_length=30)
     username = models.CharField(max_length=15)
-    
+
     def __unicode__(self):
         return self.username
 
@@ -18,6 +18,9 @@ class Fillup(models.Model):
     gallons = models.DecimalField(decimal_places=3, max_digits=5)
     price = models.DecimalField('Purchase Price', decimal_places=2, max_digits=5)
     octane_rating = models.IntegerField()
-    
+
+    def __unicode__(self):
+        return '(' + self.user.username + ') ' + str(self.purchase_date) + ': ' + str(self.odometer) + ' mi.'
+
     class Meta:
         db_table = 'fillups'
