@@ -42,5 +42,7 @@ class FillupListView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super(FillupListView, self).get_context_data(**kwargs)
-        context['all'] = self.model.objects.filter(user=User.objects.get(id=1))
+        print 'hello\n'
+        user_id = kwargs['user_id']
+        context['all'] = self.model.objects.filter(user=User.objects.get(id=user_id))
         return context

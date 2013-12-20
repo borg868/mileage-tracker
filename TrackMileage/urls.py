@@ -14,5 +14,6 @@ urlpatterns = patterns('',
    url(r'^admin/', include(admin.site.urls)),
    #url(r'^entry/', views.entry, name='entry'),
    url(r'^entry/', views.FillupEntryView.as_view(), name='entry'),
-   url(r'^listing/', views.FillupListView.as_view(), name='list')
+   url(r'^listing/$', views.FillupListView.as_view(), name='list'),
+   url(r'^listing/(?P<user_id>\d+)/$', views.FillupListView.as_view(), name='userlist'),
 )
