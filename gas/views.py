@@ -39,10 +39,12 @@ class FillupEntryView(FormView):
 class FillupListView(ListView):
     
     model = Fillup
-    
+
     def get_context_data(self, **kwargs):
         context = super(FillupListView, self).get_context_data(**kwargs)
-        print 'hello\n'
-        user_id = kwargs['user_id']
+        for key, value in self.kwargs.iteritems():
+            print key, value
+        user_id = self.kwargs.get('user_id', 1)
+        print 'user_id = ' + user_id
         context['all'] = self.model.objects.filter(user=User.objects.get(id=user_id))
         return context
