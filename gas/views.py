@@ -17,7 +17,7 @@ def entry(request):
 
         if form.is_valid():
             fillup = Fillup()
-            fillup.user = User.objects.get(username='dummy')
+            fillup.user = form.cleaned_data['user']
             fillup.purchase_date = form.cleaned_data['date']
             fillup.odometer = form.cleaned_data['odometer']
             fillup.gallons = form.cleaned_data['gallons']
